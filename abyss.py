@@ -1,5 +1,7 @@
 import pyfiglet
 import time
+import monsters
+import parser
 
 # Create ASCII art for the word "ABYSS"
 main_title = pyfiglet.figlet_format("ABYSS")
@@ -8,10 +10,10 @@ main_title = pyfiglet.figlet_format("ABYSS")
 print(main_title)
 
 # Player Classes & Class Stats
-barbarian = {"Title": "Barbarian", "Health": 200, "Magic": 0, "Agility": 80}
-mage = {"Title": "Mage", "Health": 80, "Magic": 200, "Agility": 100}
-ranger = {"Title": "Ranger", "Health": 120, "Magic": 0, "Agility": 180}
-assassin = {"Title": "Assassin", "Health": 100, "Magic": 80, "Agility": 200}
+barbarian = {"Title": "Barbarian", "Health": 200, "Magic": 0, "Agility": 80, "Weapon": "Axe"}
+mage = {"Title": "Mage", "Health": 80, "Magic": 200, "Agility": 100, "Weapon": "Staff"}
+ranger = {"Title": "Ranger", "Health": 120, "Magic": 0, "Agility": 180, "Weapon": "Bow"}
+assassin = {"Title": "Assassin", "Health": 100, "Magic": 80, "Agility": 200, "Weapon": "Dagger"}
 
 # Set Player Name
 print("What is your name?")
@@ -61,10 +63,11 @@ print("The sun is high in the sky. Birds are chirping, and you can feel a light 
 time.sleep(5)
 print("You look around you and find a small bag. You can feel some items inside.")
 time.sleep(5)
-print("Opening it up, you find a small empty container, a small knife, and a flint & steel.")
+print(f"Opening it up, you find a small empty container, a {player_class["Weapon"]}, and a flint & steel.")
 time.sleep(5)
 
 print()
 print("You hear some noises near you in the trees.")
 player_choice = input("> ")
 print(player_choice)
+
