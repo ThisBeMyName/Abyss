@@ -1,7 +1,13 @@
+import sys
+import os
 import pyfiglet
 import time
-import monsters
 import parser
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'monsters')))
+from monsters.monsters import *
+
+print(f"This is a {goblin["Health"]}")
 
 # Create ASCII art for the word "ABYSS"
 main_title = pyfiglet.figlet_format("ABYSS")
