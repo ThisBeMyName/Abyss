@@ -15,10 +15,10 @@ main_title = pyfiglet.figlet_format("ABYSS")
 print(main_title)
 
 # Player Classes & Class Stats
-barbarian = {"Title": "Barbarian", "Health": 200, "Magic": 0, "Agility": 80, "Weapon": "Axe"}
-mage = {"Title": "Mage", "Health": 80, "Magic": 200, "Agility": 100, "Weapon": "Staff"}
-ranger = {"Title": "Ranger", "Health": 120, "Magic": 0, "Agility": 180, "Weapon": "Bow"}
-assassin = {"Title": "Assassin", "Health": 100, "Magic": 80, "Agility": 200, "Weapon": "Dagger"}
+barbarian = {"Title": "Barbarian", "Health": 200, "Magic": 0, "Agility": 80, "Attack": 80, "Weapon": "Axe"}
+mage = {"Title": "Mage", "Health": 80, "Magic": 200, "Agility": 100, "Attack": 60, "Weapon": "Staff"}
+ranger = {"Title": "Ranger", "Health": 120, "Magic": 0, "Agility": 180, "Attack": 50, "Weapon": "Bow"}
+assassin = {"Title": "Assassin", "Health": 100, "Magic": 80, "Agility": 200, "Attack": 40, "Weapon": "Dagger"}
 
 # Set Player Name
 print("What is your name?")
@@ -53,7 +53,7 @@ elif player_class == 4:
 print(f"Player Name: {player_name}")
 print(f"You have chosen the {player_class["Title"]} class with the following stats:")
 print(f"Health: {player_class["Health"]}, Magic: {player_class["Magic"]}, Agility: {player_class["Agility"]}")
-time.sleep(5)
+#time.sleep(5)
 
 # Create ASCII art for the word "The Forest"
 forest_title = pyfiglet.figlet_format("The Forest")
@@ -63,16 +63,17 @@ print(forest_title)
 time.sleep(3)
 
 print("You awaken and find yourself in a large meadow surrounded by trees.")
-time.sleep(5)
+#time.sleep(5)
 print("The sun is high in the sky. Birds are chirping, and you can feel a light breeze.")
-time.sleep(5)
+#time.sleep(5)
 print("You look around you and find a small bag. You can feel some items inside.")
-time.sleep(5)
+#time.sleep(5)
 print(f"Opening it up, you find a small empty container, a {player_class["Weapon"]}, and a flint & steel.")
-time.sleep(5)
+#time.sleep(5)
 
-print()
-print("You hear some noises near you in the trees.")
-player_choice = input("> ")
-print(player_choice)
+if goblin["Attack"] < player_class["Health"]:
+    player_class["Health"] = player_class["Health"] - goblin["Attack"]
+    print(player_class["Health"])
+else:
+    print("You are dead")
 

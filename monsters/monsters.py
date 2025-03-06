@@ -1,8 +1,12 @@
-def testing():
-    print("Hello")
+def creature_attack(creature):
+    if creature["Attack"] < player_class["Health"]:
+        player_class["Health"] = player_class["Health"] - creature["Attack"]
+        print(player_class["Health"])
+    else:
+        print("You are dead")
 
 # Humanoid Creatures
-goblin = {"Title": "Goblin", "Health": 40, "Magic": 0, "Agility": 20}
+goblin = {"Title": "Goblin", "Health": 40, "Magic": 0, "Agility": 20, "Attack": 20,}
 orc = {"Title": "Orc", "Health": 100, "Magic": 0, "Agility": 80}
 troll = {"Title": "Troll", "Health": 300, "Magic": 0, "Agility": 15}
 
