@@ -1,4 +1,5 @@
-def creature_attack(creature):
+# Creature Attack Function - Determines if the creature attack will kill the player
+def creature_attack(creature, player_class):
     if creature["Attack"] < player_class["Health"]:
         player_class["Health"] = player_class["Health"] - creature["Attack"]
         print(player_class["Health"])

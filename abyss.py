@@ -60,7 +60,7 @@ forest_title = pyfiglet.figlet_format("The Forest")
 
 # Print ASCII Forest Title
 print(forest_title)
-time.sleep(3)
+#time.sleep(3)
 
 print("You awaken and find yourself in a large meadow surrounded by trees.")
 #time.sleep(5)
@@ -71,9 +71,4 @@ print("You look around you and find a small bag. You can feel some items inside.
 print(f"Opening it up, you find a small empty container, a {player_class["Weapon"]}, and a flint & steel.")
 #time.sleep(5)
 
-if goblin["Attack"] < player_class["Health"]:
-    player_class["Health"] = player_class["Health"] - goblin["Attack"]
-    print(player_class["Health"])
-else:
-    print("You are dead")
-
+creature_attack(goblin, player_class)
