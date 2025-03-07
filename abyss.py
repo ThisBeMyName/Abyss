@@ -3,10 +3,23 @@ import os
 import pyfiglet
 import time
 import parser
+import random
 
 # Importing monster data from 'monsters.py' file.
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'monsters')))
 from monsters.monsters import *
+
+def player_attack(player_class, creature):
+    attack_chance = player_class["Agility"] / random.randint(1, 4)
+    print(attack_chance)
+    attack_damage = player_class["Attack"] / random.randint(1, 8)
+    attack_damage_rounded = round(attack_damage, 2)
+    creature_health = creature["Health"] - attack_damage_rounded
+    if creature_health >= 1:
+        print(f"You delt {attack_damage_rounded} damage. The creature has {creature_health} health left")
+    else:
+        print(f"You delt {attack_damage_rounded} damage. The creature is dead!")
+
 
 # Create ASCII art for the word "ABYSS"
 main_title = pyfiglet.figlet_format("ABYSS")
@@ -71,4 +84,5 @@ print("You look around you and find a small bag. You can feel some items inside.
 print(f"Opening it up, you find a small empty container, a {player_class["Weapon"]}, and a flint & steel.")
 #time.sleep(5)
 
-creature_attack(goblin, player_class)
+player_attack(player_class, goblin)
+
